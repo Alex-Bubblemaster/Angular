@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+
+        <h3 class="text-center" ng-if="vm.SecondPlayerName">{{ vm.FirstPlayerName }} [X] vs. {{ vm.SecondPlayerName }} [O]</h3>
+        <h3 class="text-center" ng-hide="vm.SecondPlayerName"> Waiting for Opponent to Join</h3>
+        <table id="mainGame" align="center" class="gamesBoard">
+            <tr class="gamesBoardStats">
+                <td class="gamesBoardStats mainGameCell" ng-click="vm.play(0, 0, vm.Id)">{{ vm.Board[0] | displayFilter }}</td>
+                <td class="gamesBoardStats mainGameCell" ng-click="vm.play(0, 1, vm.Id)">{{ vm.Board[1] | displayFilter}}</td>
+                <td class="gamesBoardStats mainGameCell" ng-click="vm.play(0, 2, vm.Id)">{{ vm.Board[2] | displayFilter}}</td>
+            </tr>
+            <tr class="gamesBoardStats">
+                <td class="gamesBoardStats mainGameCell" ng-click="vm.play(1, 0, vm.Id)">{{ vm.Board[3] | displayFilter}}</td>
+                <td class="gamesBoardStats mainGameCell" ng-click="vm.play(1, 1, vm.Id)">{{ vm.Board[4] | displayFilter}}</td>
+                <td class="gamesBoardStats mainGameCell" ng-click="vm.play(1, 2, vm.Id)">{{ vm.Board[5] | displayFilter}}</td>
+            </tr>
+            <tr class="gamesBoardStats">
+                <td class="gamesBoardStats mainGameCell" ng-click="vm.play(2, 0, vm.Id)">{{ vm.Board[6] | displayFilter}}</td>
+                <td class="gamesBoardStats mainGameCell" ng-click="vm.play(2, 1, vm.Id)">{{ vm.Board[7] | displayFilter}}</td>
+                <td class="gamesBoardStats mainGameCell" ng-click="vm.play(2, 2, vm.Id)">{{ vm.Board[8] | displayFilter}}</td>
+            </tr>
+        </table>
+        <h3 class="text-center" ng-class="stateFilter">Status: {{ vm.State | stateFilter}}</h3>
+    </div>
+</div>

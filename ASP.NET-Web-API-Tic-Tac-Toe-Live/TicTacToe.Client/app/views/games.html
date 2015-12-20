@@ -1,0 +1,63 @@
+<div class="container clearfix" ng-cloak="">
+    <div class="container">
+        <div class="text-center">
+            <h1 id="gamesHeading" class="text-center" ng-if="vm.games">Games in progress </h1>
+            <h1 ng-if="!vm.games" class="text-center">No Games Found. Go ahead and create one :)</h1>
+        </div>
+        <div class="row">
+            <div class="row">
+                <a id="newGameBtn" ng-click="vm.addNewGame()" href="" class="btn btn-primary pull-right">Create a new
+                    game</a>
+            </div>
+        </div>
+
+        <div class="row" ng-cloak ng-if="vm.games.length !=0">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Game State</th>
+                        <th>Creator</th>
+                        <th>Opponent</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="game in vm.games" ng-class="{available: !game.SecondPlayer }" >
+                        <td>{{ $index + 1 }}</td>
+                        <td>
+                            <table class="gamesBoard">
+                                <tr>
+                                <td class="gamesBoardStats">{{ game.Board[0] | displayFilter}}</td>
+                                <td class="gamesBoardStats">{{ game.Board[1] | displayFilter}}</td>
+                                <td class="gamesBoardStats">{{ game.Board[2] | displayFilter}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="gamesBoardStats">{{ game.Board[3] | displayFilter}}</td>
+                                    <td class="gamesBoardStats">{{ game.Board[4] | displayFilter}}</td>
+                                    <td class="gamesBoardStats">{{ game.Board[5] | displayFilter}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="gamesBoardStats">{{ game.Board[6] | displayFilter}}</td>
+                                    <td class="gamesBoardStats">{{ game.Board[7] | displayFilter}}</td>
+                                    <td class="gamesBoardStats">{{ game.Board[8] | displayFilter}}</td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>{{ game.FirstPlayer.Email }}</td>
+                        <td>{{ game.SecondPlayer.Email ? game.SecondPlayer.Email : 'No second player' }}</td>
+                        <td>{{ game.State | stateFilter }}</td>
+                        <td>
+                            <button class="btn btn-primary pull-right" ng-click="vm.joinGame(game.Id)">Join</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</div>

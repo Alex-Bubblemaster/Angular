@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tic Tac Toe</title>
+    <!--<base href="/"/>-->
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css">
+    <link rel="stylesheet" href="myApp.css">
+    <link rel="icon" href="TICTACTOE.ico">
+</head>
+
+<body ng-app="myApp" ng-cloak>
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="#/home" class="navbar-brand">Tic Tac Toe</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a class="btn btn-default" href="#/games">All Games</a>
+                </li>
+            </ul>
+            <div ng-include="'views/login.html'"></div>
+        </div>
+    </div>
+</nav>
+
+<div ng-view>
+
+</div>
+<!--libs-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular-resource.min.js"></script>
+<script src="bower_components/angular/angular-cookies.min.js"></script>
+<script src="bower_components/toastr/toastr.js"></script>
+
+<!--app scripts-->
+<script src="app.js"></script>
+
+<!--services-->
+<script src="Services/Account/auth.js"></script>
+<script src="Services/Account/authorization.js"></script>
+<script src="Services/Account/identity.js"></script>
+
+<script src="Services/ErrorHandlers/errorHandler.js"></script>
+<script src="Services/ErrorHandlers/errorHandlerHttpInterceptor.js"></script>
+<script src="Services/gamesService.js"></script>
+
+<!--Filters-->
+<script src="Filters/state-filter.js"></script>
+<script src="Filters/display-filter.js"></script>
+
+<!--Controllers-->
+<script src="Controllers/RegisterController.js"></script>
+<script src="Controllers/LoginController.js"></script>
+<script src="Controllers/HomeController.js"></script>
+<script src="Controllers/GamesController.js"></script>
+<script src="Controllers/CurrentGameController.js"></script>
+
+</body>
+</html>

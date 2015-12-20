@@ -1,0 +1,38 @@
+.gamesBoard {
+    border-collapse: collapse;
+}
+.gamesBoardStats {
+
+    border: 1px solid black;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+}
+
+#newGameBtn{
+    margin-right: 10px;
+}
+
+#gamesHeading{
+    display:inline;
+}
+
+.mainGameCell {
+    font-size: 4.8em;
+    text-align: center;
+    width: 90px;
+    height: 90px;
+    cursor: crosshair;
+}
+
+.mainGameCell td:hover {
+    background-color: lightgray;
+}
+
+.available {
+    background-color: lightgreen;
+}
+
+.running {
+    background-color: lightgrey;
+}
